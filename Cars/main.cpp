@@ -10,7 +10,13 @@
 
 using namespace std;
 
-enum requestType {CREATE_A_CAR = 1, WRITE_A_CARS, SHOW_THE_FILE, SEARCH_BY_BRAND, SEARCH_BY_LOWEST_CONSUMPTION, EXIT};
+enum requestType {
+	CREATE_A_CAR = 1,
+        WRITE_A_CARS,
+        SHOW_THE_FILE,
+        SEARCH_BY_BRAND,
+        SEARCH_BY_LOWEST_CONSUMPTION,
+        EXIT};
 
 void outputLine ( const string, const string, const int, const double, const string);
 
@@ -20,17 +26,18 @@ int getRequest ();
 
 int main ()
 {
-	//creating container
-	vector< Car > carsVector; // erase() or clear()
 	
-	vector< Car >::iterator carsIterator;
+	vector< Car > carsVector; //creates container
+	
+	
+	vector< Car >::iterator carsIterator; //creates iterator
 
 	
 	//file creating
 	ofstream ofsInCars ( "cars.dat", ios::out);
 	ifstream ifsInCars ( "cars.dat", ios::in);
 
-	if(!ofsInCars)
+	if(!ofsInCars) //cheking for files correct work 
 	{
 		cout << "The file could not be opened!" << endl;
 		exit(1);
@@ -40,14 +47,16 @@ int main ()
 		cout << "The file is opened!" << endl;
 	}
 
-	//creating imput object
+	//creating temporary imput object elements
 	string brand = " ";
 	string model = " ";
 	int year = 0;
 	double consumption = 0;
 	string color = " ";
+	//end of temporary object
 
-	int request;
+
+	int request; //temporary int for request function
 
 	
 	request = getRequest();
@@ -56,7 +65,7 @@ int main ()
 	while (request != EXIT)
 	{
 		int carsCount = 0;
-	    Car tempCar;
+	        Car tempCar;
 		string tempBrand = " ";
 		int tempConsumption = 0;
 
