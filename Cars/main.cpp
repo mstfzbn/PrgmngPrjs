@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <fstream>
-#include <cstdlib>
-#include <vector>
-#include <iterator>
+#include <iomanip> //formats cout output 
+#include <fstream> //write/read files (.dat, .txt & more)
+#include <cstdlib> //not used
+#include <vector>  //vector container
+#include <iterator> //iterator - to explore object in custom class vector, useful with ostream and istream functions
 
 #include "Car.h"
 
@@ -18,9 +18,9 @@ enum requestType {
         SEARCH_BY_LOWEST_CONSUMPTION,
         EXIT};
 
-void outputLine ( const string, const string, const int, const double, const string);
+void outputLine ( const string, const string, const int, const double, const string); //format output vision for cout 
 
-int getRequest ();
+int getRequest (); //get users request for program actions
 
 
 
@@ -59,7 +59,7 @@ int main ()
 	int request; //temporary int for request function
 
 	
-	request = getRequest();
+	request = getRequest(); //furst time use request function to enter in program body
 
 	// program body
 	while (request != EXIT)
@@ -86,9 +86,9 @@ int main ()
 
 		case WRITE_A_CARS : 
 			for(carsIterator = carsVector.begin(); carsIterator != carsVector.end(); ++carsIterator)
-            {
-		        ofsInCars << *carsIterator << endl;
-	        }
+                        {
+		                ofsInCars << *carsIterator << endl;
+	                }
 
 			cout << "\nThe cars are writen to the file!" << endl;
 			carsVector.clear();
@@ -100,9 +100,9 @@ int main ()
 			ifsInCars.seekg(0);
 			cout << "Brand     Model      Year   Consum Color " << endl;
 			while (ifsInCars >> brand >> model >> year >> consumption >> color)
-	          {
+	                {
 		         outputLine (brand, model, year, consumption, color);
-	          };
+	                };
 			break;
 
 		case SEARCH_BY_BRAND :
@@ -114,12 +114,12 @@ int main ()
 			ifsInCars.seekg(0);
 			cout << "Brand     Model      Year   Consum Color " << endl;
 			while (ifsInCars >> brand >> model >> year >> consumption >> color)
-	          {
+	                {
 				  if(tempBrand == brand)
 				  {
 					  outputLine (brand, model, year, consumption, color);
 				  }
-	          };
+	                };
 			break;
 
 		case SEARCH_BY_LOWEST_CONSUMPTION : 
@@ -135,20 +135,21 @@ int main ()
 				  {
 					  tempConsumption = consumption;
 				  }				  
-	        };
+	                };
 
 			ifsInCars.clear();
 			ifsInCars.seekg(0);
 			while (ifsInCars >> brand >> model >> year >> consumption >> color)
-	        {
+	                {
 				  if(tempConsumption == consumption)
 				  {
 					  outputLine (brand, model, year, consumption, color);
 				  }
-	        };			
+	                };			
 			break;
 		}
-		request = getRequest();
+		
+		request = getRequest(); //repeat the program body cycle
 	}
 
 
