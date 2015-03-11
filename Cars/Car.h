@@ -11,11 +11,11 @@ class Car
 
 private:
 	
-	string brand;
-	string model;
-	int year;
-	double consumption;
-	string color;
+	string m_sBrand;
+	string m_sModel;
+	int m_nYear;
+	double m_dConsumption;
+	string m_sColor;
 
 public:
 	
