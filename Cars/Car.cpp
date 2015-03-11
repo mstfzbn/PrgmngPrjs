@@ -112,7 +112,7 @@ bool Car::operator== ( const Car & rhs)
 
 bool Car::operator!= ( const Car & rhs)
 {
-	if(!(this == rhs)) //need to be
+	if(!(*this == rhs)) //need to chek
 	{
 		return true;
 	}
