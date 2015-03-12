@@ -1,6 +1,6 @@
 #include <iomanip> //formats cout output
 #include <fstream> //write/read files (.dat, .txt & more)
-#include <cstdlib> //not used
+#include <cstdlib> //used for exit(1) operator at line 38
 #include <vector> //vector container
 #include <iterator> //iterator - to explore object in custom class vector, useful with ostream and istream functions
 
