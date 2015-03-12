@@ -98,7 +98,7 @@ Car Car::operator= ( const Car & rhs)
 	return *this;
 }
 
-bool Car::operator== ( const Car & rhs)
+bool Car::operator== ( const Car & rhs) const
 {
 	if((this->m_sBrand == rhs.m_sBrand)&&(this->m_sModel == rhs.m_sModel)&&(this->m_nYear == rhs.m_nYear)&&(this->m_dConsumption == rhs.m_dConsumption)&&(this->m_sColor == rhs.m_sColor))
 	{
@@ -110,7 +110,7 @@ bool Car::operator== ( const Car & rhs)
 	}
 }
 
-bool Car::operator!= ( const Car & rhs)
+bool Car::operator!= ( const Car & rhs) const
 {
 	if(!(*this == rhs)) //need to chek
 	{
