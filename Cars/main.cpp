@@ -16,9 +16,11 @@ enum requestType {
 	EXIT
 };
 
-void outputLine(const string, const string, const int, const double, const string); //format output vision for cout
+void outputLine ( const string, const string, const int, const double, const string ); //format output vision for cout
 
-int getRequest(); //get users request for program actions
+int getRequest (); //get users request for program actions
+
+void ShowTableHeader (); //show some strings - BRAND MODEL and other
 
 
 int main()
@@ -30,7 +32,7 @@ int main()
 	ofstream ofsInCars("cars.dat", ios::out);
 	ifstream ifsInCars("cars.dat", ios::in);
 
-	if (!ofsInCars) //cheking for files correct work
+	if (!ofsInCars) //checking for file's correct work
 	{
 		cout << "The file could not be opened!" << endl;
 		exit(1);
@@ -38,7 +40,7 @@ int main()
 		cout << "The file is opened!" << endl;
 	}
 
-	//creating temporary imput object elements
+	//creating temporary input object elements
 	string brand = " ";
 	string model = " ";
 	int year = 0;
@@ -84,9 +86,12 @@ int main()
 			break;
 
 		case SHOW_THE_FILE:
+
 			ifsInCars.clear();
 			ifsInCars.seekg(0);
-			cout << "Brand Model Year Consum Color " << endl;
+
+			ShowTableHeader ();
+
 			while (ifsInCars >> brand >> model >> year >> consumption >> color)
 			{
 				outputLine(brand, model, year, consumption, color);
@@ -97,9 +102,12 @@ int main()
 			cout << "\nEnter your searched brand: ";
 			cin >> tempBrand;
 			cout << "\nAll cars by brand - " << tempBrand << ":" << endl;
+
 			ifsInCars.clear();
 			ifsInCars.seekg(0);
-			cout << "Brand Model Year Consum Color " << endl;
+
+			ShowTableHeader ();
+
 			while (ifsInCars >> brand >> model >> year >> consumption >> color)
 			{
 				if (tempBrand == brand)
@@ -111,9 +119,10 @@ int main()
 
 		case SEARCH_BY_LOWEST_CONSUMPTION:
 			cout << "\nThe cars with lowest consumption:" << endl;
+
 			ifsInCars.clear();
 			ifsInCars.seekg(0);
-			cout << "Brand Model Year Consum Color " << endl;
+
 			while (!ifsInCars.eof())
 			{
 				ifsInCars >> brand >> model >> year >> consumption >> color;
@@ -123,8 +132,11 @@ int main()
 					tempConsumption = consumption;
 				}
 			};
+
 			ifsInCars.clear();
 			ifsInCars.seekg(0);
+
+			ShowTableHeader ();
 			while (ifsInCars >> brand >> model >> year >> consumption >> color)
 			{
 				if (tempConsumption == consumption)
@@ -141,9 +153,9 @@ int main()
 	return 0;
 }
 
-void outputLine(const string brnd, const string mdl, const int yr, const double cnsmptn, const string clr)
+void outputLine(const string brand, const string model, const int year, const double consumption, const string color)
 {
-	cout << left << setw(10) << brnd << setw(10) << mdl << right << setw(5)	<< yr << setw(5) << cnsmptn << " " << right << setw(8) << clr  << endl;
+	cout << left << setw(11) << brand << setw(12) << model << setw(10) << year << setw(14) << consumption << setw(10) << color << endl;
 }
 
 int getRequest() {
@@ -155,10 +167,16 @@ int getRequest() {
 			<< "4 - Search by brand" << endl
 			<< "5 - Search by less consumption" << endl
 			<< "6 - Exit!" << endl;
-	do {
+	do
+	{
 		cout << "\n? - ";
 		cin >> request;
 	} while (request < CREATE_A_CAR && request > EXIT);
 
 	return request;
+}
+
+void ShowTableHeader ()
+{
+	cout << left << setw(11) << "BRAND" << setw(12) << "MODEL" << setw(10) << "YEAR" << setw(14) << "CONSUMPTION" << setw(10) << "COLOR" << endl;
 }
