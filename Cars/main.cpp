@@ -67,7 +67,7 @@ int main ()
 		int carsCount = 0;
 	        Car tempCar;
 		string tempBrand = " ";
-		int tempConsumption = 0;
+		int tempConsumption = 100;
 
 		switch (request)
 		{
