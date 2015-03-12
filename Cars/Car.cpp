@@ -1,10 +1,4 @@
-#include <iostream>
-#include <string>
-
 #include "Car.h"
-
-using namespace std;
-
 
 Car::Car()
 {
@@ -15,16 +9,16 @@ Car::Car()
 	m_sColor = " ";
 }
 
-Car::Car ( string brnd, string mdl, int yr, double cnsmptn, string clr )
+Car::Car ( string brand, string model, int year, double consumption, string color )
 {
-	setBrand ( brnd );
-	setModel ( mdl );
-	setYear ( yr );
-	setConsumption ( cnsmptn );
-	setColor ( clr );
+	setBrand ( brand );
+	setModel ( model );
+	setYear ( year );
+	setConsumption ( consumption );
+	setColor ( color );
 }
 
-Car::Car ( const Car & rhs)
+Car::Car ( const Car & rhs )
 {
 	this->m_sBrand = rhs.m_sBrand;
 	this->m_sModel = rhs.m_sModel;
@@ -45,9 +39,9 @@ void Car::setModel ( string model )
 
 void Car::setYear ( int year )
 {
-	if (( year < 1900)||( year > 2015))
+	if ((year < 1900) || (year > 2015))
 	{
-		m_nYear = 1900;
+		m_nYear = 1967;
 	}
 	else
 	{
@@ -57,7 +51,7 @@ void Car::setYear ( int year )
 
 void Car::setConsumption ( double consumption )
 {
-	if (consumption < 0)
+	if ( consumption < 0 )
 	{
 		m_dConsumption = 0;
 	}
@@ -67,30 +61,36 @@ void Car::setConsumption ( double consumption )
 	}
 }
 
-void Car::setColor ( string color)
+void Car::setColor ( string color )
 {
 	m_sColor = color;
 }
 
-ostream &operator<< ( ostream &output, Car & rhs)
+ostream & operator<< ( ostream &output, Car & rhs )
 {
-	output << rhs.m_sBrand << " " << rhs.m_sModel << " " << rhs.m_nYear << " " << rhs.m_dConsumption << " " << rhs.m_sColor;
+	output << rhs.m_sBrand << " "
+		   << rhs.m_sModel << " "
+		   << rhs.m_nYear << " "
+		   << rhs.m_dConsumption << " "
+		   << rhs.m_sColor;
+
 	return output;
 }
 
-istream &operator>> ( istream &input, Car & rhs )
+istream & operator>> ( istream &input, Car & rhs )
 {
 	cin >> rhs.m_sBrand;
 	cin >> rhs.m_sModel;
 	cin >> rhs.m_nYear;
 	cin >> rhs.m_dConsumption;
 	cin >> rhs.m_sColor;
+
 	return input;
 }
 
-Car Car::operator= ( const Car & rhs)
+Car Car::operator= ( const Car & rhs )
 {
-        this->m_sBrand = rhs.m_sBrand;
+	this->m_sBrand = rhs.m_sBrand;
 	this->m_sModel = rhs.m_sModel;
 	this->m_nYear = rhs.m_nYear;
 	this->m_dConsumption = rhs.m_dConsumption;
@@ -98,9 +98,13 @@ Car Car::operator= ( const Car & rhs)
 	return *this;
 }
 
-bool Car::operator== ( const Car & rhs) const
+bool Car::operator== ( const Car & rhs ) const
 {
-	if((this->m_sBrand == rhs.m_sBrand)&&(this->m_sModel == rhs.m_sModel)&&(this->m_nYear == rhs.m_nYear)&&(this->m_dConsumption == rhs.m_dConsumption)&&(this->m_sColor == rhs.m_sColor))
+	if ((this->m_sBrand == rhs.m_sBrand)
+	 && (this->m_sModel == rhs.m_sModel)
+	 && (this->m_nYear == rhs.m_nYear)
+	 && (this->m_dConsumption== rhs.m_dConsumption)
+	 && (this->m_sColor == rhs.m_sColor))
 	{
 		return true;
 	}
@@ -110,9 +114,9 @@ bool Car::operator== ( const Car & rhs) const
 	}
 }
 
-bool Car::operator!= ( const Car & rhs) const
+bool Car::operator!= ( const Car & rhs ) const
 {
-	if(!(*this == rhs)) //need to chek
+	if (!(*this == rhs))
 	{
 		return true;
 	}
@@ -120,8 +124,4 @@ bool Car::operator!= ( const Car & rhs) const
 	{
 		return false;
 	}
-	
 }
-
-
-
