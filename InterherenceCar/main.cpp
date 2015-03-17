@@ -1,11 +1,7 @@
-#include <iostream>
-#include "Auto.h"
 #include "Family.h"
 #include "Luxury.h"
 #include <string>
-#include <vector>;
-
-using namespace std;
+#include <vector>
 
 int main (){
 	//                                         nomer shasi         razhod, izminati km, taksa za den, dni
