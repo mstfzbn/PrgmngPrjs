@@ -1,10 +1,4 @@
-#pragma once
-
-#include <iostream>
-#include <string>
-using namespace std;
-
-#include "auto.h"
+#include "Auto.h"
 
 class Family :	public Auto
 {
