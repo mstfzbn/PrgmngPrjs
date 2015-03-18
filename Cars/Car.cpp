@@ -88,7 +88,7 @@ istream & operator>> ( istream &input, Car & rhs )
 	return input;
 }
 
-Car Car::operator= ( const Car & rhs )
+Car & Car::operator= ( const Car & rhs )
 {
 	this->m_sBrand = rhs.m_sBrand;
 	this->m_sModel = rhs.m_sModel;
