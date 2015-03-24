@@ -36,7 +36,7 @@ public:
 	string getColor ( );
 
 	//predefined operator = for custom class "Car"
-	Car & operator= ( const Car & );
+	const Car & operator= ( const Car & );
 
 	//predefined operator == for custom class "Car"
 	bool operator== ( const Car & ) const;
