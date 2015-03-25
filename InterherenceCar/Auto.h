@@ -2,18 +2,18 @@
 
 #include <iostream>    //standart i/o library
 #include <string>      //string library
-using namespace std;   //standat namespace 
+using namespace std;   //standart namespace 
 
 class Auto
 {
 private:
-	string brand;
-	string model;
-	string kind;
-	string color;
-	int chNumber;
-	string carNumber;
-	double oilCost;
+	string m_sBrand;
+	string m_sModel;
+	string m_sKind;
+	string m_sColor;
+	int m_nChNumber;
+	string m_sCarNumber;
+	double m_dOilCost;
 public:
 	Auto (string, string, string, string, int, string, double);
 	Auto();
