@@ -1,61 +1,61 @@
 #include "Auto.h"
 
 
-Auto::Auto (string brnd, string mdl, string knd, string clr, int chnmbr, string crnmbr, double olcst)
+Auto::Auto (string brand, string model, string kind, string color, int chnumber, string carnumber, double oilcost)
 {
-	setBrand (brnd);
-	setModel (mdl);
-	setKind (knd);
-	setColor (clr);
-	setChNumber (chnmbr);
-	setCarNumber (crnmbr);
-	setOilCost (olcst);
+	setBrand (brand);
+	setModel (model);
+	setKind (kind);
+	setColor (color);
+	setChNumber (chnumber);
+	setCarNumber (carnumber);
+	setOilCost (oilcost);
 }
 
 Auto::Auto()
 {
-	brand = " ";
-	model = " ";
-	kind = " ";
-	color = " ";
-	chNumber = 0;
-	carNumber = " ";
-	oilCost = 0;
+	m_sBrand = " ";
+	m_sModel = " ";
+	m_sKind = " ";
+	m_sColor = " ";
+	m_nChNumber = 0;
+	m_sCarNumber = " ";
+	m_dOilCost = 0;
 }
 	
-void Auto::setBrand (string brnd)
+void Auto::setBrand (string brand)
 {
-	brand = brnd;
+	m_sBrand = brand;
 }
 	
-void Auto::setModel (string mdl)
+void Auto::setModel (string model)
 {
-	model = mdl;
+	m_sModel = model;
 }
 
-void Auto::setKind (string knd)
+void Auto::setKind (string kind)
 {
-	kind = knd;
+	m_sKind = kind;
 }
 
-void Auto::setColor (string clr)
+void Auto::setColor (string color)
 {
-	color = clr;
+	m_sColor = color;
 }
 
-void Auto::setChNumber (int chnmbr)
+void Auto::setChNumber (int chnumber)
 {
-	chNumber = chnmbr;
+	m_nChNumber = chnumber;
 }
 
-void Auto::setCarNumber (string crnmbr)
+void Auto::setCarNumber (string carnumber)
 {
-	carNumber = crnmbr;
+	m_sCarNumber = carnumber;
 }
 
-void Auto::setOilCost (double olcst)
+void Auto::setOilCost (double oilcost)
 {
-	oilCost = olcst;
+	m_dOilCost = oilcost;
 }
 
 
@@ -66,30 +66,30 @@ string Auto::getBrand ()
 
 string Auto::getModel ()
 {
-	return model;
+	return m_sModel;
 }
 
 string Auto::getKind ()
 {
-	return kind;
+	return m_sKind;
 }
 
 string Auto::getColor ()
 {
-	return color;
+	return m_sColor;
 }
 
 int Auto::getChNumber ()
 {
-	return chNumber;
+	return m_nChNumber;
 }
 
 string Auto::getCarNumber ()
 {
-	return carNumber;
+	return m_sCarNumber;
 }
 
 double Auto::getOilCost ()
 {
-	return oilCost;
+	return m_dOilCost;
 }
