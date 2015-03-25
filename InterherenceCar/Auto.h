@@ -1,8 +1,8 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-using namespace std;
+#include <iostream>    //standart i/o library
+#include <string>      //string library
+using namespace std;   //standat namespace 
 
 class Auto
 {
@@ -34,7 +34,7 @@ public:
 	string getCarNumber ();
 	double getOilCost ();
 
-	virtual void getPayment() = 0;
+	virtual void getPayment() = 0;   //virtual function on the major class wich will be realized in all child classes
 	
 };
 
