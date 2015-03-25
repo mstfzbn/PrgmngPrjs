@@ -61,7 +61,7 @@ void Auto::setOilCost (double oilcost)
 
 string Auto::getBrand ()
 {
-	return brand;
+	return m_sBrand;
 }
 
 string Auto::getModel ()
