@@ -4,7 +4,7 @@ using namespace std;  //used for istream and ostream functions
 
 class ComplexNumber
 {
-	friend ostream & operator<< (ostream &, ComplexNumber &);  //overloading for cout << operator
+    friend ostream & operator<< (ostream &, ComplexNumber &);  //overloading for cout << operator
     friend istream & operator>> (istream &, ComplexNumber &);  //overloading for cin >> operator
 
 
