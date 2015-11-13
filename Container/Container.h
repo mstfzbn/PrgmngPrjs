@@ -20,9 +20,8 @@ public:
 	virtual ~Container();  //destructor
 	Container & operator=(Container &); //operator=
 	Container(Container &);  //copy constructor
-
-
-							 //element adding functions
+	
+	//element adding functions
 	void putElementAtBegin(int);
 	void putElementAtEnd(int);
 	//                       value,position
@@ -34,7 +33,7 @@ public:
 	int getLastElement();   //pop the last element
 	int getElementsValueAt(int);  //get the Nth elements value
 
-								  //other functions
+	//other functions
 	bool isEmpty();  //check if the container is empty
 	int getSize();   //gets the containers size
 	void clear();    //clear the container
