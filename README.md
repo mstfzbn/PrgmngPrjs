@@ -1,9 +1,9 @@
-# PrgmngPrjs
+# Progaming Projects
 C++FirstSteps
-Basics in Objec Orientired Programming.
+Basics in Objec-Orientired Programming.
 Projects milestones:
 - arrays and functions
 - custom classes
 - interherence
 - string manipulation
-- container
+- custom STL container
