@@ -1,4 +1,4 @@
-# Progaming Projects
+# Programming Projects
 C++FirstSteps
 Basics in Objec-Orientired Programming.
 Projects milestones:
