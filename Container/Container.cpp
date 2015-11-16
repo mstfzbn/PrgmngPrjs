@@ -131,48 +131,7 @@ int Container::getLastElement()
 	}
 }
 
-void Container::putElementAtPostition(int valueToInsert, int position)
-{
-	if (this->isEmpty() || (position == 0) || (position == 1))
-	{
-		putElementAtBegin(valueToInsert);
-	}
-	else if (position > this->getSize())
-	{
-		putElementAtEnd(valueToInsert);
-	}
-	else
-	{
-		Element * toCheck = new Element;
-		toCheck = this->c_First;
-		for (int i = 0; i < this->getSize(); ++i)
-		{
-			if ((int)toCheck->e_number != (int)position)
-			{
-				toCheck = toCheck->e_next;
-			}
 
-		}
-
-
-		Element * toInsert = new Element;
-		toCheck->e_previus->e_next = toInsert;
-		toInsert->e_previus = toCheck->e_previus;
-		toCheck->e_previus = toInsert;
-		toInsert->e_next = toCheck;
-		toInsert->e_value = valueToInsert;
-		toInsert->e_number = toCheck->e_number - 1;
-		c_size++;
-
-
-		while (toCheck->e_next != NULL)
-		{
-			toCheck->e_number++;
-			toCheck = toCheck->e_next;
-		}
-
-	}
-}
 
 
 int Container::getElementsValueAt(int position)
