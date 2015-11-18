@@ -25,7 +25,7 @@ public:
 	void putElementAtBegin(int);
 	void putElementAtEnd(int);
 	//                       value,position
-	//void putElementAtPostition(int, int);
+	void putElementAtPostition(int, int);
 
 
 	//element getting functions
