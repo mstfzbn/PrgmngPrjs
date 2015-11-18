@@ -160,7 +160,9 @@ int Container::getElementsValueAt(int position)
 
 }
 
-void Container::putElementAtPostition(int valueToInsert, int position)
+
+//still not properly working
+/*void Container::putElementAtPostition(int valueToInsert, int position)
 {
 	if (this->isEmpty() || ( position == 0 ))
 	{
@@ -199,7 +201,7 @@ void Container::putElementAtPostition(int valueToInsert, int position)
 		}
 
 	}
-}
+}*/
 
 
 int Container::getElementsValueAt(int position)
