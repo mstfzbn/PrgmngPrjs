@@ -38,10 +38,18 @@ void Container::putElementAtBegin(int valueToInsert)
 		Element * toCheck = new Element;
 		toCheck = this->c_First;
 
-		while (toCheck->e_next != NULL)
+		int counter;
+
+		counter = this->getSize();
+
+		while (counter != 0)
 		{
 			toCheck->e_number++;
-			toCheck = toCheck->e_next;
+			if (toCheck->e_next != NULL)
+			{
+				toCheck = toCheck->e_next;
+			}
+			counter--;
 		}
 
 		this->c_First->e_previus = toInsert;
@@ -74,7 +82,7 @@ void Container::putElementAtEnd(int valueToInsert)
 		toInsert->e_previus = this->c_Last;
 		toInsert->e_next = NULL;
 		this->c_Last = toInsert;
-		toInsert->e_number = c_size + 1;
+		toInsert->e_number = c_size;
 		c_size++;
 	}
 }
