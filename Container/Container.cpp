@@ -144,6 +144,11 @@ int Container::getLastElement()
 
 int Container::getElementsValueAt(int position)
 {
+	if (position > this->getSize())
+	{
+		position = this->getSize();
+	}
+	
 	if (position == 0)
 	{
 		return this->c_First->e_value;
