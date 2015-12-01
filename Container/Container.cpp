@@ -226,30 +226,6 @@ void Container::putElementAtPostition(int valueToInsert, int position)
 }
 
 
-int Container::getElementsValueAt(int position)
-{
-	if(position == 0)
-	{
-		return this->c_First->e_value;
-		this->c_First = this->c_First->e_next;
-
-	}
-	else if(position == this->getSize())
-	{
-		return this->c_Last->e_value;
-	}
-	else{
-
-
-	   Element * checker = this->c_First;
-	   for (int i = 0; i < position; ++i)
-	   {
-		   checker = checker->e_next;
-	   }
-
-		return checker->e_value;
-	}
-}
 
 
 Container & Container::operator=(Container & rhs)
