@@ -46,7 +46,6 @@ ComplexNumber ComplexNumber::operator+ (const ComplexNumber & rhs)
 	to_return->n_real = this->n_real + rhs.n_real;
 	to_return->n_imgnry = this->n_imgnry + rhs.n_imgnry;
 	return *to_return;
-	delete to_return;
 }
 
 ComplexNumber ComplexNumber::operator= (const ComplexNumber & rhs)
