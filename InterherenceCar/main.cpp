@@ -80,6 +80,64 @@ class Rational
   long long int m_den;
 };
 
+class String
+{
+  public:
+
+  String() : m_data(nullptr), m_size(0) {};
+  String( const char *_data )
+  {
+    printf("S constructed\n");
+
+    m_size = strlen(_data);
+    m_data = new char[m_size];
+    std::memcpy( m_data, _data, m_size);
+  }
+  String( const String &rhs)
+  {
+    printf("S copyed\n");
+    m_size = rhs.m_size;
+    m_data = rhs.m_data;
+  }
+  String( String &&rhs) noexcept : m_size(rhs.m_size), m_data(rhs.m_data)
+  {
+    printf("S moved\n");
+    rhs.m_size = 0;
+    rhs.m_data = nullptr;
+  }
+  ~String()
+  {
+    printf("S destructed\n");
+    delete[] m_data;
+  }
+
+  void Print()
+  {
+    for(size_t i{0}; i < m_size; ++i)
+      printf("%c", m_data[i]);
+  }
+
+  private:
+  char *m_data;
+  unsigned short m_size;
+};
+
+class Entity
+{
+  public:
+
+  Entity(String && rhs) : m_info(std::move(rhs)) {};
+  
+  void printEntitysInfo()
+  {
+    m_info.Print();   
+  }
+
+
+  private:
+  String m_info;
+};
+
 int main (){
 	//                                         nomer shasi         razhod, izminati km, taksa za den, dni
 	Family famKola1("VW", "Passat", "Sedan", "Black", 210695, "PB9595MK", 6.7, 600, 50, 4);
