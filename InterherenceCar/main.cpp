@@ -85,19 +85,14 @@ class String
   public:
 
   String() : m_data(nullptr), m_size(0) {};
-  String( const char *_data )
+  String( const char *_data ) : m_size(strlen(_data)), m_data(new char[m_size])
   {
     printf("S constructed\n");
-
-    m_size = strlen(_data);
-    m_data = new char[m_size];
     std::memcpy( m_data, _data, m_size);
   }
-  String( const String &rhs)
+  String( const String &rhs) : m_size(rhs.m_size), m_data(rhs.m_data)
   {
     printf("S copyed\n");
-    m_size = rhs.m_size;
-    m_data = rhs.m_data;
   }
   String( String &&rhs) noexcept : m_size(rhs.m_size), m_data(rhs.m_data)
   {
