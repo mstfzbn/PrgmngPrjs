@@ -31,6 +31,19 @@ class Rational
 
   inline long long int getNum() const { return m_num; }
   inline long long int getDen() const { return m_den; }
+	
+  //chained functions example
+  inline Rational& acumulateNum( const long long int &_num )
+  {
+     m_num += _num; 
+     return *this;
+  }
+
+  inline Rational& acumulateDen( const long long int &_den )
+  {
+     m_den += _den; 
+     return *this;
+  }
 
   //operator overloading
   bool operator==( const Rational& rhs )
