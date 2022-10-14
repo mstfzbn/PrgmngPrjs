@@ -136,6 +136,18 @@ int main()
   }
 
   t.join();
+ 
+ 
+ 
+  std::experimental::optional<std::string> t_optional{std::experimental::nullopt};
+
+  if(!t_optional)
+    std::cout << "the value of optional is:" << *t_optional << std::endl;
+
+  t_optional = "something optional";
+
+  if(t_optional)
+    std::cout << "the value of optional is:" << *t_optional << std::endl;
 
   return 0;
 }
